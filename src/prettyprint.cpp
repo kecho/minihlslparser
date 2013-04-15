@@ -71,6 +71,12 @@ PrettyPrint::~PrettyPrint()
         }
     } 
 
+    void PrettyPrint::recursePrintArray(MiniHlslParser::ArrayT * a)
+    {
+        if (a->mixed->type == MiniHlslParser::ARRAY_T)
+            recursePrintArray(a->mixed->pointer.arrayT);
+        printf("[%d]",a->size);
+    }
     void PrettyPrint::Visit(MiniHlslParser::Variable * m)
     {
         Visit(m->type); 
@@ -81,7 +87,7 @@ PrettyPrint::~PrettyPrint()
         }
         if (m->type->type == MiniHlslParser::ARRAY_T)
         {
-            printf("[%d]",m->type->pointer.arrayT->size);
+            recursePrintArray(m->type->pointer.arrayT);
         }
         printf(";\n");
     }

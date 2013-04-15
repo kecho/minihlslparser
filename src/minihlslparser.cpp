@@ -79,7 +79,7 @@ MiniHlslParser::Variable * MiniHlslParser::GetVariable()
             v->identifier = 0;
         }
 
-        if (t->mType == MiniHlslParser::LEFT_ARR_BRAC)
+        while (t->mType == MiniHlslParser::LEFT_ARR_BRAC)
         {
             t = NEXT_TOKEN_NE();
             if (t->mType == MiniHlslParser::IMM)

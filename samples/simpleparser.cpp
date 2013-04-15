@@ -6,7 +6,7 @@ int main()
 {
     PrettyPrint pp;
     MiniHlslParser p;
-    const char * s = "struct {int2 p[10]; int2 asf [20];}";
+    const char * s = "struct {int2 p[10] [ 2]; int2 asf [20];}";
     printf("parsig: %s\n",s);
     
     p.Parse(s);
