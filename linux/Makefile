@@ -1,12 +1,13 @@
 
-CC := gcc
+CC := g++
 MKDIR := mkdir
 AR := ar
 
 MHLSL_SRC := ../src
 MHLSL_SAMPLES := ../samples
 BUILD_FOLDER := ../build
-MHLSL_SRC_FILES := minihlslparser.cpp
+MHLSL_SRC_FILES := minihlslparser.cpp\
+				   prettyprint.cpp
 MHLSL_SAMPLES_FILES := simpleparser.cpp
 MHLSL_SAMPLES_FILES_ABS := $(addprefix $(MHLSL_SAMPLES)/, $(MHLSL_SAMPLES_FILES))
 MHLSL_SRC_FILES_ABS := $(addprefix $(MHLSL_SRC)/, $(MHLSL_SRC_FILES))

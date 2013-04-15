@@ -19,13 +19,14 @@ private:
 class MiniHlslParser
 {
 public:
+    struct Mixed;
     MiniHlslParser() {}
     ~MiniHlslParser(){}
     void Parse(const char * str);
     void Tokenize(const char * str);
     void Reset();
     void PrintTokens();
-    void Print();
+    struct Mixed * GetRoot() {return mRoot;}
 
     enum TokenType {
         BLANK,
