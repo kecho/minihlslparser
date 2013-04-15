@@ -20,12 +20,13 @@ class MiniHlslParser
 {
 public:
     struct Mixed;
-    MiniHlslParser() {}
+    MiniHlslParser() : mIsError(false) {}
     ~MiniHlslParser(){}
     void Parse(const char * str);
     void Tokenize(const char * str);
     void Reset();
     void PrintTokens();
+    bool IsError() {return mIsError;}
     struct Mixed * GetRoot() {return mRoot;}
 
     enum TokenType {
@@ -150,6 +151,8 @@ private:
     NodeList * NewNodeList();
     ScalarT * NewScalarT();
     Variable * NewVariable();
+
+    bool mIsError;
 };
 
 #endif

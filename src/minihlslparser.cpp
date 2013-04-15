@@ -1,6 +1,6 @@
 #include "minihlslparser.h"
 #include "stdio.h"
-#define PARSE_ERROR(str) printf("%s\n",str);
+#define PARSE_ERROR(str) printf("%s\n",str);mIsError=true;
 #define NEXT_TOKEN_NE() NextToken();if(mCurrToken>=mTokenSize){printf("Unexpected EOF\n");return 0;}
 void * MemBlock::Allocate(int bytes)
 {
