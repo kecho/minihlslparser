@@ -12,6 +12,9 @@ int main()
     p.Parse(s);
 //    p.PrintTokens();
 
-    pp.Visit(p.GetRoot());
-    printf("\n");
+    if (!p.IsError())
+    {
+        pp.Visit(p.GetRoot());
+        printf("\n");
+    }
 }
